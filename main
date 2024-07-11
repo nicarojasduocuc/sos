@@ -1,0 +1,36 @@
+from funciones import *
+
+while True:
+        print("\nOpciones:")
+        print("1. Mostrar estado del hotel")
+        print("2. Reservar una habitación")
+        print("3. Anular una reserva")
+        print("4. Calcular ingresos del día")
+        print("5. Mostrar número de habitaciones reservadas")
+        print("6. Salir")
+        
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == '1':
+            mostrar_estado()
+        elif opcion == '2':
+            piso = int(input("Ingrese el piso (1-5): ")) - 1
+            habitacion = int(input("Ingrese el número de habitación (1-10): ")) - 1
+            reservar_habitacion(piso, habitacion)
+        elif opcion == '3':
+            piso = int(input("Ingrese el piso (1-5): ")) - 1
+            habitacion = int(input("Ingrese el número de habitación (1-10): ")) - 1
+            anular_reserva(piso, habitacion)
+        elif opcion == '4':
+            print(f"Ingresos del día: ${calcular_ingresos()}")
+        elif opcion == '5':
+            print(f"Número total de habitaciones reservadas: {habitaciones_reservadas()}")
+        elif opcion == '6':
+            guardar_informacion()
+            print("Información guardada. ¡Hasta luego!")
+            break
+        else:
+            print("Opción no válida, intente nuevamente.")
+
+if __name__ == "__main__":
+    main()
